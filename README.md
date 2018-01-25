@@ -1,3 +1,5 @@
+This is a sample application built with [Aurelia.io](https://aurelia.io) framework.
+
 # How to start the application
 
 **System prerequisite**: NodeJS and npm must be installed (should run on 4.5 as well as 9.2)
