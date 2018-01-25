@@ -1,0 +1,13 @@
+<template>
+  <loading-spinner if.bind="!ready"></loading-spinner>
+  <div if.bind="ready">
+    <p>Please select a year to see all races and winners.</p>
+    <div class="list-group">
+      <a route-href="route: season-races; params.bind: {'year': season.season}"
+         class="list-group-item list-group-item-action"
+         repeat.for="season of seasonsData">
+        ${season.season}
+      </a>
+    </div>
+  </div>
+</template>

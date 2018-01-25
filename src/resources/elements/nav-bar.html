@@ -1,0 +1,18 @@
+<template>
+  <nav class="container-fluid fixed-top navbar-dark bg-dark app-nav">
+    <div class="row">
+      <div class="col">
+        <span if.bind="router.currentInstruction.config.navbar.back">
+          <a route-href="route.bind: router.currentInstruction.config.navbar.back.route" class="app-nav__back">
+            <i class="fas fa-chevron-left"></i> ${router.currentInstruction.config.navbar.back.title}
+          </a>
+        </span>
+      </div>
+      <div class="col app-nav__title">
+        ${router.currentInstruction.config.title}
+      </div>
+      <div class="col">
+      </div>
+    </div>
+  </nav>
+</template>

@@ -1,0 +1,27 @@
+<template>
+  <require from="resources/elements/driver/driver"></require>
+  <require from="resources/value-converters/date-format"></require>
+
+  <loading-spinner if.bind="!ready"></loading-spinner>
+  <div if.bind="ready">
+    <h3>Season ${seasonYear} <span class="badge badge-secondary">${races.length} races</span></h3>
+    <p class="lead">
+      <driver driver.one-time="seasonResult.Driver" car-constructor.one-time="seasonResult.Constructors[0]"></driver>
+    </p>
+    <div class="card mb-3" repeat.for="race of races">
+      <div class="card-body">
+        <h4 class="card-title"><i class="fas fa-flag-checkered"></i> ${race.raceName}</h4>
+        <h5 class="card-text">
+          <driver driver.one-time="race.Results[0].Driver" car-constructor.one-time="race.Results[0].Constructor"></driver>
+        </h5>
+      </div>
+      <div class="card-footer">
+        <small class="text-muted">
+          <span class="mr-2"><i class="fas fa-map-marker"></i> ${race.Circuit.Location.locality}, ${race.Circuit.Location.country}</span>
+          <i class="fas fa-calendar-alt"></i> ${race.date | dateFormat}
+        </small>
+      </div>
+    </div>
+  </div>
+
+</template>

@@ -1,0 +1,15 @@
+.app-nav {
+  height: 45px;
+  line-height: 45px;
+
+  &__title {
+    color: white;
+    text-align: center;
+  }
+
+  &__back {
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
